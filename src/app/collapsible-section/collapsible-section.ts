@@ -16,4 +16,8 @@ export class CollapsibleSection {
   protected toggle() {
     this.expanded.update((expanded) => !expanded);
   }
+
+  protected expand() {
+    this.expanded.set(true);
+  }
 }

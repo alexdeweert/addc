@@ -19,13 +19,25 @@
     </button>
   </h2>
 
-  <div
-    class="section-content"
-    [id]="contentId()"
-    [class.section-content--collapsed]="!expanded()"
-    [attr.aria-hidden]="!expanded()"
-    [attr.inert]="expanded() ? null : ''"
-  >
-    <ng-content />
+  <div class="section-preview">
+    <div
+      class="section-content"
+      [id]="contentId()"
+      [class.section-content--collapsed]="!expanded()"
+      [attr.aria-hidden]="!expanded()"
+      [attr.inert]="expanded() ? null : ''"
+    >
+      <ng-content />
+    </div>
+
+    @if (!expanded()) {
+      <button
+        class="preview-expander"
+        type="button"
+        [attr.aria-controls]="contentId()"
+        [attr.aria-label]="'Expand ' + title() + ' section'"
+        (click)="expand()"
+      ></button>
+    }
   </div>
 </section>
