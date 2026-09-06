@@ -1,0 +1,13 @@
+<article class="article-page">
+  <a class="article-page__back" routerLink="/">← HOME</a>
+
+  <header class="article-page__header">
+    <p class="article-page__kind">{{ kind() }}</p>
+    <h2>{{ title() }}</h2>
+    <time class="article-page__date" [attr.datetime]="dateTime()">{{ date() }}</time>
+  </header>
+
+  <div class="article-page__body">
+    <ng-content />
+  </div>
+</article>

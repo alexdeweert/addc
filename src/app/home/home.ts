@@ -18,7 +18,7 @@ export class Home {
       summary: 'What abandoned work can still teach us when the outcome is not a launch.',
     },
     {
-      date: 'TBD',
+      date: '2026-09-06',
       header: 'Building a small Angular portfolio',
       route: '/articles/building-a-small-angular-portfolio',
       summary: 'Static output, GitHub Actions, and choosing familiar tools over fashionable ones.',

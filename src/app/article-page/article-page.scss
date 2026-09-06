@@ -1,0 +1,113 @@
+.article-page {
+  min-height: 20rem;
+}
+
+.article-page__back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.article-page__back:hover {
+  color: var(--accent);
+}
+
+.article-page__header {
+  max-width: 43rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-page__kind {
+  margin: 0 0 0.65rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-page h2 {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.article-page__date {
+  display: block;
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.article-page__body {
+  max-width: 43rem;
+  padding-top: 2rem;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.article-page__body > :first-child {
+  margin-top: 0;
+}
+
+.article-page__body p,
+.article-page__body ul,
+.article-page__body blockquote {
+  margin: 1rem 0 0;
+}
+
+.article-page__body h3 {
+  margin: 2.4rem 0 0;
+  color: var(--text-strong);
+  font-size: 1.15rem;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.article-page__body ul {
+  padding-left: 1.4rem;
+}
+
+.article-page__body li + li {
+  margin-top: 0.45rem;
+}
+
+.article-page__body code {
+  padding: 0.12em 0.3em;
+  border: 1px solid var(--rule);
+  border-radius: 0.2rem;
+  background: var(--surface);
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+
+.article-page__body blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--text-muted);
+}
+
+.article-page__body a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+.article-page__lede {
+  color: var(--text-strong);
+  font-size: 1.15rem;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+  line-height: 1.55;
+}

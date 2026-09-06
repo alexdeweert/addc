@@ -1,0 +1,46 @@
+<app-article-page
+  date="September 6, 2026"
+  dateTime="2026-09-06"
+  title="Building a small Angular portfolio"
+>
+  <p class="article-page__lede">
+    This site began with a modest goal: keep a public record of the work, decisions, and abandoned
+    directions that are still worth remembering.
+  </p>
+
+  <h3>Why Angular?</h3>
+  <p>
+    Angular is more framework than a small portfolio strictly needs. It is also the framework I use
+    professionally, so the surrounding concepts are familiar and the site remains pleasant to
+    change. For a personal project, familiarity can be a perfectly reasonable architectural choice.
+  </p>
+
+  <h3>Static by design</h3>
+  <p>
+    The application is prerendered during <code>ng build</code>. Visitors receive ordinary static
+    files, while the source can still use Angular components and routing.
+  </p>
+  <ul>
+    <li>The homepage introduces the site and lists the available writing.</li>
+    <li>Each article or project has a direct URL that can be bookmarked and shared.</li>
+    <li>Shared components keep typography and navigation consistent.</li>
+  </ul>
+
+  <h3>Deployment without a server</h3>
+  <p>
+    A GitHub Actions workflow builds the application whenever the main branch changes. GitHub Pages
+    publishes the generated files, and the custom domain points readers to that deployment.
+  </p>
+
+  <blockquote>
+    The goal is not to make a small website feel like a large application. The goal is to use
+    familiar tools without making the final result complicated.
+  </blockquote>
+
+  <h3>What comes next</h3>
+  <p>
+    The useful part starts after the infrastructure disappears into the background: replacing sample
+    entries with honest accounts of what each project attempted, what worked, and why the work
+    eventually stopped.
+  </p>
+</app-article-page>

@@ -20,12 +20,11 @@ export const routes: Routes = [
   },
   {
     path: 'articles/building-a-small-angular-portfolio',
-    loadComponent: placeholderPage,
+    loadComponent: () =>
+      import('./articles/building-a-small-angular-portfolio/building-a-small-angular-portfolio').then(
+        ({ BuildingASmallAngularPortfolio }) => BuildingASmallAngularPortfolio,
+      ),
     title: 'Building a small Angular portfolio — Alex Deweert',
-    data: {
-      kind: 'Article',
-      title: 'Building a small Angular portfolio',
-    },
   },
   {
     path: 'articles/notes-from-the-workbench',
