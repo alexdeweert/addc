@@ -35,7 +35,6 @@ h2 {
   stroke-linecap: square;
   stroke-linejoin: miter;
   stroke-width: 1.75;
-  transition: transform 180ms ease;
 }
 
 .chevron--expanded {
@@ -50,7 +49,6 @@ h2 {
   max-height: 999rem;
   padding-top: 1rem;
   overflow: hidden;
-  transition: max-height 360ms ease;
 }
 
 .section-content--collapsed {
@@ -72,11 +70,4 @@ h2 {
 .preview-expander:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .chevron,
-  .section-content {
-    transition: none;
-  }
 }
