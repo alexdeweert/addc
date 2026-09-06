@@ -81,6 +81,13 @@ body {
     color 160ms ease;
 }
 
+button:focus-visible,
+a:focus-visible {
+  border-radius: 0.15rem;
+  outline: 2px solid var(--accent);
+  outline-offset: 0.25rem;
+}
+
 ::selection {
   background: var(--accent);
   color: var(--background);

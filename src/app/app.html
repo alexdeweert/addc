@@ -1,7 +1,7 @@
 <div class="site-shell">
   <header class="site-header">
     <h1 class="site-title">
-      <a class="identity" href="#home" aria-label="Alex Deweert, homepage">
+      <a class="identity" routerLink="/" aria-label="Alex Deweert, homepage">
         <span>ALEX DEWEERT</span>
         <span class="identity-suffix">— DEVELOPER</span>
       </a>
@@ -30,167 +30,7 @@
   </header>
 
   <main>
-    <section class="content-section" id="home">
-      <h2>
-        <button
-          class="section-heading"
-          type="button"
-          aria-controls="home-content"
-          [attr.aria-expanded]="isExpanded('home')"
-          (click)="toggleSection('home')"
-        >
-          <span>HOME</span>
-          <svg
-            aria-hidden="true"
-            class="chevron"
-            [class.chevron--expanded]="isExpanded('home')"
-            viewBox="0 0 20 20"
-          >
-            <path d="m5 7.5 5 5 5-5" />
-          </svg>
-        </button>
-      </h2>
-
-      <div
-        class="section-content"
-        id="home-content"
-        [class.section-content--collapsed]="!isExpanded('home')"
-      >
-        <p class="lede">I’m Alex Deweert, a software developer.</p>
-        <p>
-          This is a small record of the things I make: what I was trying to solve, where the work
-          was headed, and why some projects stopped.
-        </p>
-        <p>
-          It is deliberately simple. The interesting part should be the work, the decisions behind
-          it, and the lessons that survived it.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section" id="articles">
-      <h2>
-        <button
-          class="section-heading"
-          type="button"
-          aria-controls="articles-content"
-          [attr.aria-expanded]="isExpanded('articles')"
-          (click)="toggleSection('articles')"
-        >
-          <span>ARTICLES</span>
-          <svg
-            aria-hidden="true"
-            class="chevron"
-            [class.chevron--expanded]="isExpanded('articles')"
-            viewBox="0 0 20 20"
-          >
-            <path d="m5 7.5 5 5 5-5" />
-          </svg>
-        </button>
-      </h2>
-
-      <div
-        class="section-content"
-        id="articles-content"
-        [class.section-content--collapsed]="!isExpanded('articles')"
-      >
-        <p class="section-intro">
-          Longer notes about software, tradeoffs, and the work behind finished and unfinished
-          projects.
-        </p>
-
-        <ol class="entry-list">
-          <li>
-            <span class="entry-meta">PLANNED</span>
-            <div>
-              <strong>Why keep a project archive?</strong>
-              <p>What abandoned work can still teach us when the outcome is not a launch.</p>
-            </div>
-          </li>
-          <li>
-            <span class="entry-meta">PLANNED</span>
-            <div>
-              <strong>Building a small Angular portfolio</strong>
-              <p>
-                Static output, GitHub Actions, and choosing familiar tools over fashionable ones.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span class="entry-meta">PLANNED</span>
-            <div>
-              <strong>Notes from the workbench</strong>
-              <p>
-                Short observations that are useful enough to keep but too small for a full essay.
-              </p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="content-section" id="projects">
-      <h2>
-        <button
-          class="section-heading"
-          type="button"
-          aria-controls="projects-content"
-          [attr.aria-expanded]="isExpanded('projects')"
-          (click)="toggleSection('projects')"
-        >
-          <span>PROJECTS</span>
-          <svg
-            aria-hidden="true"
-            class="chevron"
-            [class.chevron--expanded]="isExpanded('projects')"
-            viewBox="0 0 20 20"
-          >
-            <path d="m5 7.5 5 5 5-5" />
-          </svg>
-        </button>
-      </h2>
-
-      <div
-        class="section-content"
-        id="projects-content"
-        [class.section-content--collapsed]="!isExpanded('projects')"
-      >
-        <p class="section-intro">
-          Projects are documented as stories rather than trophies: the problem, the direction, the
-          useful parts, and the stopping point.
-        </p>
-
-        <ol class="entry-list">
-          <li>
-            <span class="entry-meta">2026</span>
-            <div>
-              <strong>alexdeweert.dev</strong>
-              <p>This site—an Angular application prerendered and deployed through GitHub Pages.</p>
-            </div>
-          </li>
-          <li>
-            <span class="entry-meta">ARCHIVE</span>
-            <div>
-              <strong>Earlier work</strong>
-              <p>
-                Past projects will appear here as their notes, screenshots, and source material are
-                recovered.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span class="entry-meta">OPEN</span>
-            <div>
-              <strong>The next entry</strong>
-              <p>
-                A place for work still in motion, without pretending that every experiment needs to
-                be finished.
-              </p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+    <router-outlet />
   </main>
 
   <footer>
@@ -198,5 +38,3 @@
     <a href="https://github.com/alexdeweert">GitHub</a>
   </footer>
 </div>
-
-<router-outlet />

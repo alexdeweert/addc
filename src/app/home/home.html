@@ -1,0 +1,40 @@
+<app-collapsible-section sectionId="home" title="HOME" [initiallyExpanded]="true">
+  <p class="lede">I’m Alex Deweert, a software developer.</p>
+  <p>
+    This is a small record of the things I make: what I was trying to solve, where the work was
+    headed, and why some projects stopped.
+  </p>
+  <p>
+    It is deliberately simple. The interesting part should be the work, the decisions behind it, and
+    the lessons that survived it.
+  </p>
+</app-collapsible-section>
+
+<app-collapsible-section sectionId="articles" title="ARTICLES">
+  <p class="section-intro">
+    Longer notes about software, tradeoffs, and the work behind finished and unfinished projects.
+  </p>
+
+  <ol class="article-list">
+    @for (article of articles; track article.route) {
+      <li>
+        <app-article-item [article]="article" />
+      </li>
+    }
+  </ol>
+</app-collapsible-section>
+
+<app-collapsible-section sectionId="projects" title="PROJECTS">
+  <p class="section-intro">
+    Projects are documented as stories rather than trophies: the problem, the direction, the useful
+    parts, and the stopping point.
+  </p>
+
+  <ol class="article-list">
+    @for (project of projects; track project.route) {
+      <li>
+        <app-article-item [article]="project" />
+      </li>
+    }
+  </ol>
+</app-collapsible-section>

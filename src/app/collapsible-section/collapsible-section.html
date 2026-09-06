@@ -1,0 +1,31 @@
+<section [id]="sectionId()">
+  <h2>
+    <button
+      class="section-heading"
+      type="button"
+      [attr.aria-controls]="contentId()"
+      [attr.aria-expanded]="expanded()"
+      (click)="toggle()"
+    >
+      <span>{{ title() }}</span>
+      <svg
+        aria-hidden="true"
+        class="chevron"
+        [class.chevron--expanded]="expanded()"
+        viewBox="0 0 20 20"
+      >
+        <path d="m5 7.5 5 5 5-5" />
+      </svg>
+    </button>
+  </h2>
+
+  <div
+    class="section-content"
+    [id]="contentId()"
+    [class.section-content--collapsed]="!expanded()"
+    [attr.aria-hidden]="!expanded()"
+    [attr.inert]="expanded() ? null : ''"
+  >
+    <ng-content />
+  </div>
+</section>

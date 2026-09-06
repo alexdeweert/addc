@@ -1,0 +1,7 @@
+<article>
+  <span class="article-date">{{ article().date }}</span>
+  <a class="article-link" [routerLink]="article().route">
+    <strong>{{ article().header }}</strong>
+    <p>{{ article().summary }}</p>
+  </a>
+</article>

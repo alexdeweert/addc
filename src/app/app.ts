@@ -1,23 +1,19 @@
 import { afterNextRender, Component, computed, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
-type SectionId = 'home' | 'articles' | 'projects';
 type Theme = 'dark' | 'light';
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterLink, RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
 })
 export class App {
-  readonly expandedSections = signal<Record<SectionId, boolean>>({
-    home: true,
-    articles: false,
-    projects: false,
-  });
-  readonly theme = signal<Theme>('dark');
-  readonly themeAction = computed(() => (this.theme() === 'dark' ? 'Light mode' : 'Dark mode'));
+  protected readonly theme = signal<Theme>('dark');
+  protected readonly themeAction = computed(() =>
+    this.theme() === 'dark' ? 'Light mode' : 'Dark mode',
+  );
 
   constructor() {
     afterNextRender(() => {
@@ -36,18 +32,7 @@ export class App {
     });
   }
 
-  isExpanded(section: SectionId) {
-    return this.expandedSections()[section];
-  }
-
-  toggleSection(section: SectionId) {
-    this.expandedSections.update((sections) => ({
-      ...sections,
-      [section]: !sections[section],
-    }));
-  }
-
-  toggleTheme() {
+  protected toggleTheme() {
     this.setTheme(this.theme() === 'dark' ? 'light' : 'dark');
   }
 
