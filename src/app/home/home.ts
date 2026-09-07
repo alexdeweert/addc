@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from '../article/article';
+import { Article, sortArticles } from '../article/article';
 import { ArticleItem } from '../article/article-item';
 import { CollapsibleSection } from '../collapsible-section/collapsible-section';
 
@@ -10,7 +10,7 @@ import { CollapsibleSection } from '../collapsible-section/collapsible-section';
   templateUrl: './home.html',
 })
 export class Home {
-  protected readonly articles: Article[] = [
+  protected readonly articles: Article[] = sortArticles([
     {
       date: 'TBD',
       header: 'Why keep a project archive?',
@@ -20,6 +20,7 @@ export class Home {
     {
       date: '2026-09-06',
       header: 'Building a small Angular portfolio',
+      pinned: true,
       route: '/articles/building-a-small-angular-portfolio',
       summary: 'Static output, GitHub Actions, and choosing familiar tools over fashionable ones.',
     },
@@ -29,9 +30,9 @@ export class Home {
       route: '/articles/notes-from-the-workbench',
       summary: 'Short observations that are useful enough to keep but too small for a full essay.',
     },
-  ];
+  ]);
 
-  protected readonly projects: Article[] = [
+  protected readonly projects: Article[] = sortArticles([
     {
       date: '2026-09-06',
       header: 'alexdeweert.dev',
@@ -52,5 +53,5 @@ export class Home {
       summary:
         'A place for work still in motion, without pretending that every experiment needs to be finished.',
     },
-  ];
+  ]);
 }

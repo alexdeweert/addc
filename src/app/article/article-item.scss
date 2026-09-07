@@ -4,13 +4,27 @@ article {
   gap: 1rem;
 }
 
-.article-date {
+.article-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
   padding-top: 0.15rem;
-  color: var(--text-faint);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
   font-weight: 650;
   letter-spacing: 0.04em;
+}
+
+.article-date {
+  color: var(--text-faint);
+  font-size: 0.72rem;
+}
+
+.article-pinned {
+  color: var(--accent);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .article-link {

@@ -1,5 +1,10 @@
 <article>
-  <span class="article-date">{{ article().date }}</span>
+  <span class="article-meta">
+    <span class="article-date">{{ article().date }}</span>
+    @if (article().pinned) {
+      <span class="article-pinned">Pinned</span>
+    }
+  </span>
   <a class="article-link" [routerLink]="article().route">
     <strong>{{ article().header }}</strong>
     <p>{{ article().summary }}</p>
