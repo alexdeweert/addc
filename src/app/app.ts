@@ -10,6 +10,7 @@ type Theme = 'dark' | 'light';
   templateUrl: './app.html',
 })
 export class App {
+  protected readonly currentYear = new Date().getFullYear();
   protected readonly theme = signal<Theme>('dark');
   protected readonly themeAction = computed(() =>
     this.theme() === 'dark' ? 'Light mode' : 'Dark mode',
