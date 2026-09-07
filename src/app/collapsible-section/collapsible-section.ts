@@ -1,4 +1,5 @@
-import { Component, computed, input, linkedSignal } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
+import { SectionState } from './section-state';
 
 @Component({
   selector: 'app-collapsible-section',
@@ -10,14 +11,18 @@ export class CollapsibleSection {
   readonly title = input.required<string>();
   readonly initiallyExpanded = input(false);
 
-  protected readonly expanded = linkedSignal(() => this.initiallyExpanded());
+  private readonly sectionState = inject(SectionState);
+
+  protected readonly expanded = computed(() =>
+    this.sectionState.isExpanded(this.sectionId(), this.initiallyExpanded()),
+  );
   protected readonly contentId = computed(() => `${this.sectionId()}-content`);
 
   protected toggle() {
-    this.expanded.update((expanded) => !expanded);
+    this.sectionState.setExpanded(this.sectionId(), !this.expanded());
   }
 
   protected expand() {
-    this.expanded.set(true);
+    this.sectionState.setExpanded(this.sectionId(), true);
   }
 }
