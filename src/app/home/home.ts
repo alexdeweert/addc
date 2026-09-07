@@ -21,6 +21,7 @@ export class Home {
       date: '2026-09-06',
       header: 'Building a small Angular portfolio',
       pinned: true,
+      pinOrder: 1,
       route: '/articles/building-a-small-angular-portfolio',
       summary: 'Static output, GitHub Actions, and choosing familiar tools over fashionable ones.',
     },
