@@ -9,7 +9,7 @@ import { SectionState } from './section-state';
 export class CollapsibleSection {
   readonly sectionId = input.required<string>();
   readonly title = input.required<string>();
-  readonly initiallyExpanded = input(false);
+  readonly initiallyExpanded = input(true);
 
   private readonly sectionState = inject(SectionState);
 
