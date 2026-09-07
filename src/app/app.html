@@ -7,25 +7,73 @@
       </a>
     </h1>
 
-    <button
-      class="theme-toggle"
-      type="button"
-      [attr.aria-label]="'Switch to ' + themeAction().toLowerCase()"
-      (click)="toggleTheme()"
-    >
-      @if (theme() === 'dark') {
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="3.5" />
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
-          />
-        </svg>
-      } @else {
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <path d="M20.5 15.1A8.5 8.5 0 0 1 8.9 3.5a8.5 8.5 0 1 0 11.6 11.6Z" />
-        </svg>
-      }
-    </button>
+    <div class="header-actions">
+      <nav class="social-links" aria-label="Social links">
+        <a
+          class="social-link"
+          href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alexander.deweert%40gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Email Alex Deweert using Gmail"
+          title="Email"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
+            />
+          </svg>
+        </a>
+        <a
+          class="social-link"
+          href="https://github.com/alexdeweert"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Alex Deweert on GitHub"
+          title="GitHub"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M12 .7a11.3 11.3 0 0 0-3.6 22c.57.1.78-.25.78-.55v-2.17c-3.18.69-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.54-.29-5.21-1.27-5.21-5.59 0-1.23.44-2.24 1.17-3.03-.12-.29-.51-1.45.11-2.99 0 0 .95-.3 3.11 1.16A10.8 10.8 0 0 1 12 6.04c.96 0 1.92.13 2.83.38 2.16-1.46 3.11-1.16 3.11-1.16.62 1.54.23 2.7.11 2.99.73.79 1.17 1.8 1.17 3.03 0 4.33-2.68 5.29-5.23 5.57.41.35.78 1.05.78 2.12v3.18c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"
+            />
+          </svg>
+        </a>
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/in/alexdeweert/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Alex Deweert on LinkedIn"
+          title="LinkedIn"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V8.99H7.1v11.46Z"
+            />
+          </svg>
+        </a>
+      </nav>
+
+      <button
+        class="theme-toggle"
+        type="button"
+        [attr.aria-label]="'Switch to ' + themeAction().toLowerCase()"
+        [attr.title]="themeAction()"
+        (click)="toggleTheme()"
+      >
+        @if (theme() === 'dark') {
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3.5" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+            />
+          </svg>
+        } @else {
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M20.5 15.1A8.5 8.5 0 0 1 8.9 3.5a8.5 8.5 0 1 0 11.6 11.6Z" />
+          </svg>
+        }
+      </button>
+    </div>
   </header>
 
   <main>
