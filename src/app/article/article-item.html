@@ -5,8 +5,15 @@
       <span class="article-pinned">Pinned</span>
     }
   </span>
-  <a class="article-link" [routerLink]="article().route">
-    <strong>{{ article().header }}</strong>
-    <p>{{ article().summary }}</p>
-  </a>
+  @if (article().href; as href) {
+    <a class="article-link" [href]="href" target="_blank" rel="noopener noreferrer">
+      <strong>{{ article().header }}</strong>
+      <p>{{ article().summary }}</p>
+    </a>
+  } @else if (article().route; as route) {
+    <a class="article-link" [routerLink]="route">
+      <strong>{{ article().header }}</strong>
+      <p>{{ article().summary }}</p>
+    </a>
+  }
 </article>

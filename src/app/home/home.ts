@@ -10,6 +10,15 @@ import { CollapsibleSection } from '../collapsible-section/collapsible-section';
   templateUrl: './home.html',
 })
 export class Home {
+  protected readonly documents: Article[] = sortArticles([
+    {
+      date: '2026-09-07',
+      header: 'Résumé',
+      href: '/documents/alex-deweert-resume.pdf',
+      summary: 'Current résumé with professional experience, skills, education, and recent work.',
+    },
+  ]);
+
   protected readonly articles: Article[] = sortArticles([
     {
       date: 'TBD',

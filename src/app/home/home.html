@@ -1,16 +1,21 @@
 <app-collapsible-section sectionId="home" title="HOME">
+  <p>Hello. I'm Alex Deweert, a software developer. This is my digital portfolio.</p>
   <p>
-    Hello. I'm Alex Deweert, a software developer. This is my digital portfolio.
-  </p>
-  <p>
-    This site also contains project journal entries and blog posts in the theme of software development and computer science. Thanks for stopping by.
+    This site also contains project journal entries and blog posts in the theme of software
+    development and computer science. Thanks for stopping by.
   </p>
 </app-collapsible-section>
 
 <app-collapsible-section sectionId="documents" title="DOCUMENTS">
-  <p class="section-intro">
-    Longer reference material, reports, and other documents will appear here.
-  </p>
+  <p class="section-intro">Downloadable reference material, reports, and other documents.</p>
+
+  <ol class="article-list">
+    @for (document of documents; track document.href) {
+      <li>
+        <app-article-item [article]="document" />
+      </li>
+    }
+  </ol>
 </app-collapsible-section>
 
 <app-collapsible-section sectionId="projects" title="PROJECTS">

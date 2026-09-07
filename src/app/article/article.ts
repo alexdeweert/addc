@@ -1,11 +1,13 @@
-export interface Article {
+interface ArticleDetails {
   date: string;
   header: string;
   pinned?: boolean;
   pinOrder?: number;
-  route: string;
   summary: string;
 }
+
+export type Article = ArticleDetails &
+  ({ href: string; route?: never } | { href?: never; route: string });
 
 export function sortArticles(articles: readonly Article[]) {
   return [...articles].sort((first, second) => {
